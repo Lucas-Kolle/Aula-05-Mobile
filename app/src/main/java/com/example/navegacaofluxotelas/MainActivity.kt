@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.navegacaofluxotelas.screens.LoginScreen
 import com.example.navegacaofluxotelas.screens.MenuScreen
+import com.example.navegacaofluxotelas.screens.PerfilScreen
 import com.example.navegacaofluxotelas.ui.theme.NavegacaoFluxoTelasTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             NavegacaoFluxoTelasTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MenuScreen( modifier = Modifier.padding(innerPadding))
+                    PerfilScreen( modifier = Modifier.padding(innerPadding))
                 }
             }
         }
