@@ -19,11 +19,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 
-@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController
+) {
 
     Box(
         modifier = modifier
@@ -40,7 +43,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
         )
 
         Button(
-            onClick = {},
+            onClick = {navController.navigate("Menu")},
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.White,
             ),
