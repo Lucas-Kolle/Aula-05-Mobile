@@ -50,7 +50,7 @@ fun MenuScreen(
         )
         {
             Button(
-                onClick = {navController.navigate("Perfil/Lucas Kolle")},
+                onClick = {navController.navigate("Perfil/Lucas Kolle/18")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
