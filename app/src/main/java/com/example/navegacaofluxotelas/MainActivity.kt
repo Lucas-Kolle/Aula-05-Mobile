@@ -36,15 +36,15 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable (route = "Perfil"){
-                            PerfilScreen( modifier = Modifier.padding(innerPadding))
+                            PerfilScreen( modifier = Modifier.padding(innerPadding), navController = navController)
                         }
 
                         composable (route = "Menu"){
-                            MenuScreen( modifier = Modifier.padding(innerPadding))
+                            MenuScreen( modifier = Modifier.padding(innerPadding), navController = navController)
                         }
 
                         composable (route = "Pedidos"){
-                            PedidosScreen( modifier = Modifier.padding(innerPadding))
+                            PedidosScreen( modifier = Modifier.padding(innerPadding), navController = navController)
                         }
                     }
 

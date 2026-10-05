@@ -1,6 +1,7 @@
 package com.example.navegacaofluxotelas.screens
 
 import android.R
+import android.R.attr.onClick
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -20,10 +21,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
-@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun MenuScreen(modifier: Modifier = Modifier) {
+fun MenuScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -46,7 +49,7 @@ fun MenuScreen(modifier: Modifier = Modifier) {
         )
         {
             Button(
-                onClick = { /* TODO */},
+                onClick = {navController.navigate("Perfil")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
@@ -61,7 +64,7 @@ fun MenuScreen(modifier: Modifier = Modifier) {
             }
 
             Button(
-                onClick = { /* TODO */},
+                onClick = {navController.navigate("Pedidos")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
@@ -76,7 +79,7 @@ fun MenuScreen(modifier: Modifier = Modifier) {
             }
 
             Button(
-                onClick = { /* TODO */},
+                onClick = {navController.navigate("Login")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),

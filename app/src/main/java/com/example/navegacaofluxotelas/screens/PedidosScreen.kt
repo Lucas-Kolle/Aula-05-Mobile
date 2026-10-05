@@ -16,10 +16,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
-@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun PedidosScreen(modifier: Modifier = Modifier) {
+fun PedidosScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -34,7 +36,7 @@ fun PedidosScreen(modifier: Modifier = Modifier) {
         )
 
         Button(
-            onClick = { /* TODO */},
+            onClick = {navController.navigate("Menu")},
             colors = ButtonDefaults.buttonColors(
                 Color.White
             ),
