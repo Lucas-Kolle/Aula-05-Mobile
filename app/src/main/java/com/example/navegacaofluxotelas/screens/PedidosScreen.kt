@@ -21,7 +21,8 @@ import androidx.navigation.NavController
 @Composable
 fun PedidosScreen(
     modifier: Modifier = Modifier,
-    navController: NavController
+    navController: NavController,
+    numeroPedido: String
 ) {
     Box(
         modifier = Modifier
@@ -30,7 +31,7 @@ fun PedidosScreen(
             .padding(32.dp)
     ){
         Text(
-            text = "PEDIDOS",
+            text = "PEDIDOS - $numeroPedido",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White

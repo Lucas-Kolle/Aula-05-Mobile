@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.navegacaofluxotelas.screens.LoginScreen
 import com.example.navegacaofluxotelas.screens.MenuScreen
 import com.example.navegacaofluxotelas.screens.PedidosScreen
@@ -56,8 +57,19 @@ class MainActivity : ComponentActivity() {
                             )
                         }
 
-                        composable (route = "Pedidos"){
-                            PedidosScreen( modifier = Modifier.padding(innerPadding), navController = navController)
+                        composable (
+                            route = "Pedidos?numeroPedido={numeroPedido}",
+                            arguments = listOf(navArgument(name = "numeroPedido"){
+                                defaultValue = "Sem Pedidos" // Se nenhum valor for informado a resposta será : "sem pedidos"
+                            })
+                        ){
+                            val numeroPedido = it.arguments?.getString("numeroPedido")
+
+                            PedidosScreen(
+                                modifier = Modifier.padding(innerPadding),
+                                navController = navController,
+                                numeroPedido = numeroPedido!!
+                            )
                         }
                     }
 
