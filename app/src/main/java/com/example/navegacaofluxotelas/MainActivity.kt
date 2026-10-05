@@ -32,15 +32,28 @@ class MainActivity : ComponentActivity() {
                         startDestination = "Login"
                     ){
                         composable (route = "Login"){
-                            LoginScreen( modifier = Modifier.padding(innerPadding), navController = navController)
+                            LoginScreen(
+                                modifier = Modifier.padding(innerPadding),
+                                navController = navController
+                            )
                         }
 
-                        composable (route = "Perfil"){
-                            PerfilScreen( modifier = Modifier.padding(innerPadding), navController = navController)
+                        composable (route = "Perfil/{nome}"){
+
+                            val nome = it.arguments?.getString("nome") // Acessa os argumentos recebidos e pega o que possui a chave "nome"
+
+                            PerfilScreen(
+                                modifier = Modifier.padding(innerPadding),
+                                navController = navController,
+                                nome = nome!!
+                            )
                         }
 
                         composable (route = "Menu"){
-                            MenuScreen( modifier = Modifier.padding(innerPadding), navController = navController)
+                            MenuScreen(
+                                modifier = Modifier.padding(innerPadding),
+                                navController = navController
+                            )
                         }
 
                         composable (route = "Pedidos"){
